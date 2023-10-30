@@ -1,0 +1,14 @@
+function soma() {
+    let soma = 0
+    for (i in arguments) { // percorre cada elemento do array
+        soma += arguments[i]
+    }
+    return soma
+}
+
+console.log(soma())
+console.log(soma(1))
+console.log(soma(1.1, 2.2, 3.3)) // soma todos os elementos do array
+
+console.log(soma(1.1, 2.2, "Teste"))
+console.log(soma('a', 'b', 'c'))
