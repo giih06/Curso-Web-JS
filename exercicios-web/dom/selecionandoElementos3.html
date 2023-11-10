@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search">
+        <input type="text" name="q" placeholder="Digite o termo...">
+        <select name="hl"> // host language
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+    </form>
+    <script>
+        console.log(document.forms) // traz um array do tipo HTMLCollection com todos os formulários
+        console.log(document.forms[0]) // acessa os elementos dentro de um htmlCollection
+        console.log(document.getElementsByName('pesquisa')) // nodeList 
+        console.log(document.pesquisa) // procura o elemento que tem o name pesquisa
+        console.log(document.pesquisa.q) // entra dentro do formulario pesquisa e pega o input com name "q"
+        document.pesquisa.q.value = 'Linux Brasil' // altera o texto do formulário
+        document.pesquisa.hl.value = 'en-us'// a linguagem será selecionada como padrão o ingles
+        console.log(document.pesquisa.hl.selectedIndex) // qual o index que está selecionado a linguagem
+    </script>
+</body>
+
+</html>

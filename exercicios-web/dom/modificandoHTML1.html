@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <script>
+        const body = document.querySelector('body') // seleciona o elem. body
+
+        const div1 = document.createElement('div') // criei uma div (html)
+        div1.classList.add('destaque') // adiciona a classe destaque ao elemento div 
+        div1.innerHTML = 'Primeiro' // definindo o conteúdo da div
+
+        const div2 = document.createElement('div') // criei uma div (html)
+        div2.setAttribute('wm-atributo', 'valor') // criei um atributo com chave-valor
+        div2.innerHTML = 'Segundo' // definindo o conteúdo
+
+        const p = document.createElement('p') // criei um paragrafo (html)
+        p.innerHTML = 'Terceiro'
+        const div3 = document.createElement('div') // criei a div
+        div3.appendChild(p) // adicionei o parágrado dentro da div (o appensChild coloca o parágrado como último elemento da div)
+
+        body.appendChild(div1)
+        body.appendChild(div2)
+        body.appendChild(div3)
+
+        const texto = document.createTextNode('Antes...')
+        div3.insertBefore(texto, div3.childNodes[0]) // insere na div3, passa o elemento filho que será adicionado (texto) e passa exatamente a posição que será inserida antes 
+
+        const div4 = div3.cloneNode(true) // true ou false é para verificar se serão clonados os filhos do elemento, ou não
+        body.appendChild(div4)
+        body.removeChild(div3) // remove a div 3 do body
+</script> 
+</body>
+
+</html>

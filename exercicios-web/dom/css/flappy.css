@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Over There';
+    src: url('../fonts/Over\ There.ttf');
+}
+
+@font-face {
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+
+h1 {
+    font-family: 'Over There';
+}
+
+[wm-flappy] {
+    position: relative; /*permite que você posicione um elemento com base na sua posição original do documento*/ 
+    border: 5px solid dodgerblue;
+    width: 700px;
+    height: 1200px;
+    margin: 15px;
+    background-color: deepskyblue;
+    overflow: hidden; /* qualquer coisa fora dessa div não irá aparecer*/
+}
+
+.passaro {
+    position: absolute;/* permite que o elemento seja posicionado com base na posição do elemento pai ( o wm-flappy )*/
+    width: 60px;
+    left: calc(50% - 30px); /* posicionado no meio do lado esquerdo do jogo*/
+    bottom: 50%; /* posicionado no meio em relação a parte de baixo (fundo) */
+}
+
+.par-de-barreiras {
+    position: absolute;
+    top: 0; /* alinhado com o topo*/
+    height: 100%;
+    display: flex;/*alinha elementos em um container*/
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.barreira {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centraliza os elementos verticais*/
+}
+
+.barreira .borda {
+    height: 30px;
+    width: 130px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border: 2px solid #000;
+}
+
+.barreira .corpo {
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #A5E82E);
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+
+.progresso {
+    position: absolute;
+    top: 10px; /* 10px abaixo do topo */
+    right: 10px; /* 10px alinnhado com a direita*/
+    font-family: Pixel;
+    font-size: 70px;
+}

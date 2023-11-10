@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        const classes = div.classList 
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque') // alternância (se existe, ele remove, se não existe, ele adiciona o destaque)
+        console.log(classes.contains('destaque')) // verifica se a classe está contida ou não na lista de classes
+        console.log(classes.length) // quantidade de classes que um determinado elemento tem (tamanho) (retorna 1 classe)
+        classes.toggle('destaque') // agora, que removeu o destaque..
+        console.log(classes.length) // retorna 0 classes
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.length) // retorna 2 classes já que adicionamos destaque1 e destaque 2
+        
+        // laço for que pega todas as classes de um determinado elemento ( nesse caso é o elemento div )
+        for(let c of classes) { 
+            console.log(c)
+        }
+
+        // forEach associado as classes
+        classes.forEach(c => console.log(c))
+    </script>
+</body>
+
+</html>

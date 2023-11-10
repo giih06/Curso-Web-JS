@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p>
+    </div>
+    <script>
+        const div = document.querySelector('div')
+        div.innerHTML = 'Texto Alterado' // tudo que está dentro da div será substituido pelo texto
+
+        // div.outerHTML = 'Texto alterado' // substitui tudo que está dentro, incluindo a própria div pelo texto
+
+        div.insertAdjacentHTML('beforebegin', '<p>Antes Início</p>') // antes de começar a div, coloque determinado html  
+
+        div.insertAdjacentHTML('afterbegin', '<p>Depois Início</p>')// depois da div coloque um parágrafo
+
+        div.insertAdjacentHTML('beforeend', '<p>Antes Fim</p>') // insira um p antes do fim da div
+
+        div.insertAdjacentHTML('afterend','<p>Depois Fim</p>')// insira um p depois do fim da div
+
+        // somente texto (sem tags)
+        console.log(div.innerText) // retorna o texto associado a tag do parâmetro
+
+        // texto com tags
+        console.log(div.innerHTML) // retorna o texto com as tags do elemento do parâmetro
+    </script>
+</body>
+
+</html>

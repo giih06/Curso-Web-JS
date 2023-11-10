@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessando Atributos #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('#compras') // constante que obtem o elemento do id compras
+
+        // somente leitura
+        console.log(lista.attributes) // todos os atributos da lista
+        console.log(lista.attributes[0]) // pega o elemento do indice 0 (retorna compras)
+        console.log(lista.attributes.id) // retorna compras
+        console.log(lista.attributes[1]) // pega o elemento do inidice 1 (retorna destino)
+        console.log(lista.attributes.destino) // retorna escritório
+        console.log(lista.attributes[2]) // pega o elemento do índice 2 (retorna 5)
+        console.log(lista.attributes['data-urgencia']) // retorna 5
+
+    </script>
+</body>
+
+</html>
